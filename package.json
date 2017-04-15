@@ -49,7 +49,7 @@
   "jsnext:main": "es/index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "aws-sdk": "^2.6.0"
+    "aws-sdk": "git://github.com/aws/aws-sdk-js.git#react-native"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
