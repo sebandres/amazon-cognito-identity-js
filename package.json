@@ -51,7 +51,6 @@
   "types": "./index.d.ts",
   "dependencies": {
     "aws-sdk": "git://github.com/aws/aws-sdk-js.git#react-native",
-    "babel-jest": "^19.0.0",
     "jasmine": "^2.5.3"
   },
   "devDependencies": {

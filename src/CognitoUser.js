@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { util } from 'aws-sdk/global';
+import { util } from 'aws-sdk/dist/aws-sdk-react-native';
 
 import BigInteger from './BigInteger';
 import AuthenticationHelper from './AuthenticationHelper';
@@ -204,7 +204,7 @@ export default class CognitoUser {
         this.client.makeUnauthenticatedRequest('respondToAuthChallenge', challenge,
           (errChallenge, dataChallenge) => {
             if (errChallenge && errChallenge.code === 'ResourceNotFoundException' &&
-                errChallenge.message.toLowerCase().indexOf('device') !== -1) {
+              errChallenge.message.toLowerCase().indexOf('device') !== -1) {
               challengeResponses.DEVICE_KEY = null;
               this.deviceKey = null;
               this.randomPassword = null;
@@ -295,11 +295,11 @@ export default class CognitoUser {
 
     const deviceSecretVerifierConfig = {
       Salt: new util.Buffer(
-          authenticationHelper.getSaltDevices(), 'hex'
-        ).toString('base64'),
+        authenticationHelper.getSaltDevices(), 'hex'
+      ).toString('base64'),
       PasswordVerifier: new util.Buffer(
-          authenticationHelper.getVerifierDevices(), 'hex'
-        ).toString('base64'),
+        authenticationHelper.getVerifierDevices(), 'hex'
+      ).toString('base64'),
     };
 
     this.verifierDevices = deviceSecretVerifierConfig.PasswordVerifier;
@@ -558,11 +558,11 @@ export default class CognitoUser {
 
       const deviceSecretVerifierConfig = {
         Salt: new util.Buffer(
-            authenticationHelper.getSaltDevices(), 'hex'
-          ).toString('base64'),
+          authenticationHelper.getSaltDevices(), 'hex'
+        ).toString('base64'),
         PasswordVerifier: new util.Buffer(
-            authenticationHelper.getVerifierDevices(), 'hex'
-          ).toString('base64'),
+          authenticationHelper.getVerifierDevices(), 'hex'
+        ).toString('base64'),
       };
 
       this.verifierDevices = deviceSecretVerifierConfig.PasswordVerifier;
